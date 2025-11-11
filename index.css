@@ -1,0 +1,45 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.wave‑section {
+  position: relative;
+  background‑color: #000;
+  overflow: hidden;
+  height: 400px; /* adjust as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wave‑section .content {
+  position: relative;
+  z‑index: 2;
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+}
+
+.waves {
+  position: absolute;
+  inset: 0;
+  z‑index: 1;
+  background: radial-gradient(
+    circle at center,
+    rgb(0, 115, 199) 0%,              /* bright centre dot */
+    rgba(0, 115, 199, 0.6) 4%,
+    transparent 8%,
+    rgba(0, 115, 199, 0.5) 12%,
+    transparent 16%,
+    rgba(0, 115, 199, 0.35) 24%,
+    transparent 30%,
+    rgba(0, 115, 199, 0.2) 40%,
+    transparent 50%,
+    rgba(0, 115, 199, 0.1) 70%,
+    transparent 100%
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+}
