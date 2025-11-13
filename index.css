@@ -176,33 +176,125 @@ body, html {
   border-color: #087d9d;
 }
 
-.spacey:hover {
-  background-color: rgb(40, 131, 219) !important;
-  color: white !important;
-  transition: all 0.3s ease;
-}
-
-.tab-links a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: color 0.3s;
-}
-
-.tab-links a:hover {
-  color: white;
-}
-
-.tab-links a.active {
-  border-bottom: 2px solid white;
-}
-
+/* --- Base styling for all tabs --- */
 .tab-pane {
-  display: none;   /* hide all panes by default */
-  text-align: center; /* optional: center content */
+  display: none;
+  text-align: center;
 }
 
 .tab-pane.active {
-  display: block;  /* show active pane */
+  display: block;
+}
+
+/* --- Image containers --- */
+.mee img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+/* Ensure all images in the row are equal height */
+.mee {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* --- Inner info containers (below each image) --- */
+.why {
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* Base link style */
+.why .tab-link {
+  position: relative;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Brighten text on hover or active */
+.why .tab-link:hover,
+.why .tab-link.active {
+  color: white; /* soft bright gold tint */
+}
+
+/* Animated underline */
+.why .tab-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px; /* small gap below text */
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.4s ease;
+}
+
+/* Underline expands on hover or active */
+.why .tab-link:hover::after,
+.why .tab-link.active::after {
+  width: 100%;
+}
+
+
+/* --- Text alignment consistency --- */
+.why p,
+.why h5 {
+  margin: 0;
+}
+
+/* --- Adjust spacing for smaller screens --- */
+@media (max-width: 992px) {
+  .mee {
+    margin-bottom: 20px;
+  }
+  .why {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .why h5 {
+    font-size: 15px;
+  }
+  .why p {
+    font-size: 10px;
+  }
+  .mee img {
+    height: auto; /* allow flexible resizing */
+  }
+}
+
+@media (max-width: 576px) {
+  .mee {
+    padding: 10px 0;
+  }
+  .why {
+    padding: 8px;
+  }
+  .why h5 {
+    font-size: 14px;
+  }
+  .why p {
+    font-size: 9px;
+  }
+}
+
+
+
+.spacey{
+  background-color: black; /* default background */
+  color: white;            /* text color */
+  transition: background-color 0.3s ease;
+}
+
+
+.spacey:hover {
+  background-color: #00aaff; /* light blue on hover */
+  color: white;
 }
