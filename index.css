@@ -419,23 +419,23 @@ body, html {
 
 .image-card {
   position: relative;
-  height: 250px;
+  height: 450px;
   background-size: cover;
   background-position: center;
-  border-radius: 12px;
   overflow: hidden;
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start; /* 👈 Move text to the TOP */
   padding: 20px;
   color: #fff;
   box-shadow: 0px 10px 20px rgba(0,0,0,0.25);
 }
 
+
 /* Dark overlay so text pops out */
 .image-card .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.45);
+  background: rgba(0,0,0,0.65);
   backdrop-filter: blur(1px);
   z-index: 1;
 }
@@ -446,8 +446,188 @@ body, html {
   z-index: 2;
 }
 
+.image-card .content {
+  position: relative;
+  z-index: 2;
+  
+  display: flex;
+  flex-direction: column;
+  height: 100%;           /* full height */
+}
+
+.image-card .content p {
+  margin-top: auto;       /* pushes paragraph to the bottom */
+}
+
+
 .image-card h4,
 .image-card p {
   margin: 0;
   padding: 0;
+}
+
+.blog {
+  padding-bottom: 100px; /* or any size you want */
+  margin-bottom: 0 !important;
+  
+}
+
+
+.ski{
+  background-color: rgb(18, 24, 39);
+}
+
+/* Responsive main heading */
+.responsive-heading {
+  font-size: 58px;
+}
+
+.responsive-text {
+  font-size: 18px;
+}
+
+/* Social links */
+.social-link {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: 'ingrid flower', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-transform: uppercase;
+  text-decoration: underline;
+  margin: 0;
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 992px) {
+  .responsive-heading {
+    font-size: 45px;
+  }
+  
+  .responsive-text {
+    font-size: 16px;
+  }
+  
+  .social-link {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .responsive-heading {
+    font-size: 35px;
+  }
+  
+  .responsive-text {
+    font-size: 14px;
+  }
+  
+  .social-link {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 576px) {
+  .responsive-heading {
+    font-size: 28px;
+  }
+  
+  .responsive-text {
+    font-size: 12px;
+  }
+  
+  .social-link {
+    font-size: 16px;
+  }
+}
+
+.pfft {
+  display: flex;               /* Enable Flexbox */
+  flex-direction: column;      /* Stack content vertically */
+  justify-content: center;     /* Center vertically */
+  align-items: center;         /* Center horizontally */
+  text-align: center;          /* Ensure text is centered */
+  height: 100%;                /* Optional: make it fill parent height if needed */
+  padding-top: 0;              /* Remove extra top padding if desired */
+  padding-bottom: 0;           /* Remove extra bottom padding if desired */
+}
+
+.glory {
+  width: 100px;              /* smaller width */
+  height: 100px;             /* smaller height to match width */
+  max-width: 50px;           /* optional max size */
+  max-height: 50px;
+  min-width: 40px;           /* optional min size */
+  min-height: 40px;
+  background-color: rgb(191, 243, 83); /* green color */
+  border-radius: 50%;        /* keeps it circular */
+  
+  /* Center icon inside */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  font-size: 16px;           /* adjust icon size if needed */
+}
+
+.align {
+  display: flex;
+  flex-direction: column;       /* stack items vertically */
+  align-items: center;          /* center horizontally */
+  justify-content: center;      /* center vertically if height allows */
+  text-align: center;           /* ensure text is centered */
+  gap: 10px;                    /* optional spacing between elements */
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;  /* vertical alignment of icon and text */
+  gap: 15px;            /* space between icon and text */
+}
+
+.contact-text {
+  display: flex;
+  flex-direction: column; /* stack heading and paragraph vertically */
+  justify-content: center;
+}
+
+.responsive {
+  text-align: left; /* default alignment on larger screens */
+}
+
+/* Center content on smaller screens */
+@media (max-width: 767px) {
+  .responsive {
+    text-align: center;
+  }
+}
+
+.link-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* evenly space links vertically */
+  height: 100%;
+}
+
+.footer-link {
+  color: rgb(167, 179, 184);
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s;
+  margin-bottom: 10px; /* space between links */
+}
+
+.footer-link:hover {
+  color: white;
+}
+
+/* Middle column height */
+.play {
+  height: 100%;
+}
+
+/* Extra: Add spacing between stacked inner columns on small screens */
+@media (max-width: 767px) {
+  .play .col-12 + .col-12 {
+    margin-top: 15px;
+  }
 }
