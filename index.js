@@ -14,3 +14,14 @@
       document.getElementById(this.dataset.tab).classList.add('active');
     });
   })
+
+  // Bootstrap carousel setup
+document.addEventListener("DOMContentLoaded", () => {
+  const heroCarousel = document.querySelector("#heroCarousel");
+
+  const carousel = new bootstrap.Carousel(heroCarousel, {
+    interval: 4000,  // Auto-slide every 4 seconds
+    pause: 'hover',  // Pause when hovered
+    wrap: true        // Loop back to first slide
+  });
+});
