@@ -375,3 +375,79 @@ body, html {
   filter: invert(100%);
 }
 
+.image-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   /* or set a fixed height like 200px */
+}
+
+.pant:hover {
+  background-color: white !important;
+  color: black !important;
+  border-color: white !important;
+  transition: all 0.3s ease;
+}
+
+.hero-section {
+  background-image: url('https://res.cloudinary.com/det5cjrev/image/upload/v1762816583/development2_uhgjg9.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* 🔥 keeps background locked */
+  min-height: 700px;
+  display: flex;
+  padding: 50px 20px;
+}
+
+.hero-content {
+  position: relative; 
+  z-index: 2; 
+}
+
+.hero-img {
+  height: 120px;
+  margin-top: 20px;
+  border: 3px solid white;
+}
+
+.joe:hover {
+  background-color: rgb(85, 157, 226) !important;
+  color: white !important;
+  border-color: white !important;
+  transition: all 0.3s ease;
+}
+
+.image-card {
+  position: relative;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  color: #fff;
+  box-shadow: 0px 10px 20px rgba(0,0,0,0.25);
+}
+
+/* Dark overlay so text pops out */
+.image-card .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(1px);
+  z-index: 1;
+}
+
+/* Text/content */
+.image-card .content {
+  position: relative;
+  z-index: 2;
+}
+
+.image-card h4,
+.image-card p {
+  margin: 0;
+  padding: 0;
+}
