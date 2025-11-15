@@ -4,12 +4,31 @@ body, html {
   height: 100%;
 }
 
+/* Desktop — Image at FAR RIGHT and visible */
 .woman {
   background-image: url('https://res.cloudinary.com/det5cjrev/image/upload/v1763047619/cover01_scfwzx.png');
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: 170%;
+  background-position: right center;   /* FAR RIGHT */
+  background-size: 130%;            /* ensures full image is visible */
   min-height: 700px;
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+  .woman {
+    background-position: right center; 
+    background-size: cover;            /* fills area but keeps eye visible */
+    min-height: 450px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .woman {
+    background-position: center right; /* keep image on the right */
+    background-size: cover;            /* best for small screens */
+    min-height: 350px;
+  }
 }
 
 /* 🟦 Inner Container Styling */
@@ -207,33 +226,38 @@ body, html {
 }
 
 /* Base link style */
+/* Base state — inactive = gray */
 .why .tab-link {
   position: relative;
-  color: white;
+  color: rgb(200, 205, 212); /* INACTIVE gray */
   font-weight: bold;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-/* Brighten text on hover or active */
-.why .tab-link:hover,
+/* Active = white */
 .why .tab-link.active {
-  color: white; /* soft bright gold tint */
+  color: white;
 }
 
-/* Animated underline */
+/* Hover — inactive becomes white */
+.why .tab-link:hover {
+  color: white;
+}
+
+/* Underline effect */
 .why .tab-link::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -4px; /* small gap below text */
+  bottom: -4px;
   width: 0;
   height: 2px;
   background-color: white;
   transition: width 0.4s ease;
 }
 
-/* Underline expands on hover or active */
+/* Underline on hover or active */
 .why .tab-link:hover::after,
 .why .tab-link.active::after {
   width: 100%;
@@ -283,12 +307,75 @@ body, html {
   }
 }
 
+.textcontent {
+  font-family: 'Montserrat', 'Poppins', sans-serif;
+  font-weight: 700;           /* bold */
+  font-size: clamp(2rem, 2.5vw + 1rem, 3rem);  /* adjust responsive size */
+  line-height: 1.2;            /* tight for headings */
+  text-transform: uppercase;   /* match uppercase style */
+}
 
+
+.thick-line {
+  width: 50%;
+  border-bottom: 4px solid rgb(40, 131, 219); /* thickness + color */
+  margin: 0 auto;
+  max-width: 64px; /* adjust length of line */
+}
+
+.thick {
+  width: 50%;
+  border-bottom: 3px solid rgb(254, 205, 96); /* thickness + color */
+  max-width: 48px; /* adjust length of line */
+}
+
+.sigh {
+  width: 50%; /* or any desired width */
+  max-width: 57px; /* limits the line length */
+  border-bottom: 3px solid white;
+  margin: 0 auto; /* centers the line horizontally */
+}
+
+.gonna {
+  width: 50%; /* or any desired width */
+  max-width: 53px; /* limits the line length */
+  border-bottom: 3px solid rgb(40, 131, 219);
+  margin: 0 auto; /* centers the line horizontally */
+}
+
+.know {
+  width: 50%; /* or any desired width */
+  max-width: 57px; /* limits the line length */
+  border-bottom: 3px solid white;
+}
+
+.code {
+  width: 50%; /* or any desired width */
+  max-width: 53px; /* limits the line length */
+  border-bottom: 3px solid rgb(40, 131, 219);
+}
+
+.seven {
+  width: 50%; /* or any desired width */
+  max-width: 57px; /* limits the line length */
+  border-bottom: 3px solid rgb(40, 131, 219);
+}
+
+.lose {
+  width: 50%; /* or any desired width */
+  max-width: 57px; /* limits the line length */
+  border-bottom: 3px solid rgb(40, 131, 219);
+  margin: 0 auto; /* centers the line horizontally */
+}
 
 .spacey{
   background-color: black; /* default background */
   color: white;            /* text color */
   transition: background-color 0.3s ease;
+}
+
+:root {
+  --bs-font-sans-serif: "Roboto", sans-serif;
 }
 
 
