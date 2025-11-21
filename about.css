@@ -31,3 +31,79 @@
     color: white !important;
     border: 1px solid black !important;
 }
+
+.thick {
+  width: 50%;
+  border-bottom: 4px solid rgb(40, 131, 219); /* thickness + color */
+  max-width: 55px; /* adjust length of line */
+}
+
+.multi-slider {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 calc(100% / 6); /* 6 slides visible */
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Faint arrow buttons */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: none; /* No background */
+  color: rgba(0,0,0,0.35); /* Faint */
+  font-size: 40px;
+  cursor: pointer;
+  z-index: 10;
+  padding: 0;
+}
+
+.nav-btn:hover {
+  color: rgba(0,0,0,0.55); /* Slightly stronger on hover */
+}
+
+.prev-btn { left: 5px; }
+.next-btn { right: 5px; }
+
+/* Medium screens – show 4 slides */
+@media (max-width: 992px) {
+  .slide {
+    flex: 0 0 calc(100% / 4);
+  }
+}
+
+/* Tablets – show 2 slides */
+@media (max-width: 768px) {
+  .slide {
+    flex: 0 0 calc(100% / 2);
+  }
+}
+
+/* Mobile – show 1 slide */
+@media (max-width: 500px) {
+  .slide {
+    flex: 0 0 calc(100%);
+  }
+}
+
