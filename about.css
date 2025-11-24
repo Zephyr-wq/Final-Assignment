@@ -1,0 +1,466 @@
+.link {
+  color: rgba(255, 255, 255, 0.85);   /* slightly dim white */
+  position: relative;                 /* needed for underline */
+  text-decoration: none;              /* remove default underline */
+  transition: color 0.3s ease;        /* smooth brightness transition */
+}
+
+/* underline effect */
+.link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -7px;                       /* distance from text */
+  width: 0;
+  height: 2px;
+  background-color: rgb(202, 241, 109);     /* underline matches text color */
+  transition: width 0.3s ease;
+}
+
+/* hover state */
+.link:hover {
+  color: rgb(202, 241, 109);          /* make text brighter */
+}
+
+.link:hover::after {
+  width: 100%;                        /* underline expands fully */
+}
+
+.hmm:hover {
+  background-color: black !important;
+  color: white !important;
+  border: 1px solid black !important;
+}
+
+/*start from here when copying into flashdrive and other system*/
+
+.background-wrapper_RZ2 {
+  position: relative;
+  height: 700px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  /* FLEXBOX CENTER EVERYTHING  */
+  display: flex;
+  justify-content: center; /* centers left-to-right */
+  align-items: center;     /* centers top-to-bottom */
+  color: #fff;
+  box-shadow: 0px 10px 20px rgba(0,0,0,0.25);
+  background: url('https://it-solutions.sites.motocms.com/res/63d0da48e46664000d195eac/63d90588e6d082000d89dd09?nowebp') no-repeat center center;
+  background-size: cover;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0.5,0.5,0.5,0.5);
+  z-index: 1;
+}
+
+/* Ensure content stays ABOVE overlay */
+.content {
+  position: relative;
+  z-index: 2;
+  justify-content: center;
+  align-items: center;
+}
+
+.play-circle {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(191, 243, 83); /* green */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.play-icon {
+  width: 45px;
+  height: 45px;
+  fill: #000;
+}
+
+/* Default height (large screens) */
+.background-wrapper_RZ2 {
+  height: 700px;
+}
+
+/* Medium screens (tablets & small laptops) */
+@media (max-width: 992px) {
+  .background-wrapper_RZ2 {
+    height: 500px;
+  }
+
+  .play-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .play-icon {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* Small screens (phones in landscape, small tablets) */
+@media (max-width: 768px) {
+  .background-wrapper_RZ2 {
+    height: 350px;
+  }
+
+  .play-circle {
+    width: 85px;
+    height: 85px;
+  }
+
+  .play-icon {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* Extra-small screens (phones portrait) */
+@media (max-width: 480px) {
+  .background-wrapper_RZ2 {
+    height: 250px;
+  }
+
+  .play-circle {
+    width: 70px;
+    height: 70px;
+  }
+
+  .play-icon {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+.loopSliderWrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.loopSliderTrack {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+}
+
+.loopSlide {
+    min-width: calc(100% / 3); /* show 3 slides */
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+}
+
+.loopSlide img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.loopText {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+/* Buttons */
+.loopPrevBtn,
+.loopNextBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: rgb(149, 189, 73);
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0 10px;
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+}
+
+.loopPrevBtn:hover,
+.loopNextBtn:hover {
+    opacity: 1;
+}
+
+.loopPrevBtn {
+    left: 0;
+}
+
+.loopNextBtn {
+    right: 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .loopSlide {
+        min-width: 50%; /* show 2 slides */
+    }
+}
+
+@media (max-width: 600px) {
+    .loopSlide {
+        min-width: 100%; /* show 1 slide */
+    }
+}
+
+.font-icons{
+  display: flex;
+  gap: 20px;
+}
+
+.borders{
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+}
+
+.gonna {
+  width: 50%; /* or any desired width */
+  max-width: 60px; /* limits the line length */
+  border-bottom: 3px solid rgb(40, 131, 219);
+}
+
+.alcohol{
+  border-radius: 50%;
+  background-color: rgb(191, 243, 83);
+  height: 80px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.warn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.back {
+  width: 100%;
+  height: 950vh;     /* proportional, responsive */
+  max-height: 950px; 
+  object-fit: cover;
+  display: block;
+}
+
+.name{
+  background-color: black;
+}
+
+.name:hover{
+  background-color: rgb(40, 131, 219) !important;
+  transition: 0.2s ease-in !important;
+}
+
+.ewo {
+  width: 50%; /* or any desired width */
+  max-width: 60px; /* limits the line length */
+  border-bottom: 3px solid rgb(40, 131, 219);
+  margin: 0 auto;
+}
+
+/* Center only on small screens */
+@media (max-width: 767px) {
+  .center-mobile {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+}
+
+.collapsible-wrapper {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+.collapsible-item {
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.collapsible-btn {
+  width: 100%;
+  background-color: white; /* green button */
+  color: black;
+  padding: 15px 20px;
+  text-align: left;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.collapsible-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  background-color: #f9f9f9;
+  padding-left: 20px;
+}
+
+.roll{
+  border-radius: 50%;
+  background-color: rgb(191, 243, 83);
+  height: 10px;
+  width: 15px;
+}
+
+.pant:hover{
+  background-color: black !important;
+  color: white !important;
+  transition: 0.3s ease-in;
+}
+
+.multi-slider {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 calc(100% / 6); /* 6 slides visible */
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Faint arrow buttons */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: none; /* No background */
+  color: rgba(0,0,0,0.35); /* Faint */
+  font-size: 40px;
+  cursor: pointer;
+  z-index: 10;
+  padding: 0;
+}
+
+.nav-btn:hover {
+  color: rgba(0,0,0,0.55); /* Slightly stronger on hover */
+}
+
+.prev-btn { left: 5px; }
+.next-btn { right: 5px; }
+
+/* Medium screens – show 4 slides */
+@media (max-width: 992px) {
+  .slide {
+    flex: 0 0 calc(100% / 4);
+  }
+}
+
+/* Tablets – show 2 slides */
+@media (max-width: 768px) {
+  .slide {
+    flex: 0 0 calc(100% / 2);
+  }
+}
+
+/* Mobile – show 1 slide */
+@media (max-width: 500px) {
+  .slide {
+    flex: 0 0 calc(100%);
+  }
+}
+
+.multi-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.4s ease;
+}
+
+.slide {
+    flex: 0 0 calc(100% / 6); /* show 6 items on desktop */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.slide img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .slide {
+        flex: 0 0 calc(100% / 3); /* show 3 slides */
+    }
+}
+
+@media (max-width: 575px) {
+    .slide {
+        flex: 0 0 100%; /* show 1 slide */
+    }
+}
+
+/* Navigation buttons */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.3); /* faint */
+    z-index: 2;
+    padding: 5px;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.nav-btn:hover {
+    color: rgba(0, 0, 0, 0.5); /* slightly darker on hover */
+}
+

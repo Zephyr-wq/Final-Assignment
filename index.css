@@ -1,0 +1,719 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Desktop — Image at FAR RIGHT and visible */
+.woman {
+  background-image: url('https://res.cloudinary.com/det5cjrev/image/upload/v1763047619/cover01_scfwzx.png');
+  background-repeat: no-repeat;
+  background-position: right center;   /* FAR RIGHT */
+  background-size: 130%;            /* ensures full image is visible */
+  min-height: 700px;
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+  .woman {
+    background-position: right center; 
+    background-size: cover;            /* fills area but keeps eye visible */
+    min-height: 450px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .woman {
+    background-position: center right; /* keep image on the right */
+    background-size: cover;            /* best for small screens */
+    min-height: 350px;
+  }
+}
+
+/* 🟦 Inner Container Styling */
+.opaque {
+  gap: 4px;
+  z-index: 1;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 992px) {
+  .wave-section {
+    min-height: 600px;
+    padding: 4rem 0;
+  }
+
+  .woman {
+    min-height: 400px;
+    margin-top: 2rem;
+  }
+
+  .wave-section .content {
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .opaque .col-md-5 {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .wave-section {
+    padding: 2rem 1rem;
+    min-height: 500px;
+  }
+
+  .woman {
+    min-height: 300px;
+  }
+
+  .wave-section .content {
+    text-align: center;
+    font-size: 18px;
+  }
+}
+
+.map{
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.gitt{
+  z-index: 1; 
+}
+
+@media (max-width: 768px) {
+  .gitt{
+    text-align: center;
+  }
+}
+
+
+.color{
+  background-color: rgb(0, 133, 222);
+}
+
+.circle {
+  width: 6vw;                  /* width scales with viewport */
+  height: 6vw;                 /* height matches width for perfect circle */
+  max-width: 150px;             /* optional max size */
+  max-height: 150px;
+  min-width: 40px;              /* optional min size */
+  min-height: 60px;
+  background-color: rgb(191, 243, 83); /* green color */
+  border-radius: 50%;           /* makes it circular */
+  
+  /* Center content inside */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.green-circle .circle-icon {
+  width: 50%;                  /* icon scales with circle */
+  height: auto;
+}
+
+.image{
+  position: relative;   /* optional if you want absolute positioning inside */
+  overflow: hidden;     /* hides anything outside container */
+  object-fit: cover;
+}
+
+.full-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    /* scales image to cover container without distortion */
+}
+
+.navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.85);   /* slightly dim white */
+  position: relative;                 /* needed for underline */
+  text-decoration: none;              /* remove default underline */
+  transition: color 0.3s ease;        /* smooth brightness transition */
+}
+
+/* underline effect */
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;                       /* distance from text */
+  width: 0;
+  height: 2px;
+  background-color: currentColor;     /* underline matches text color */
+  transition: width 0.3s ease;
+}
+
+/* hover state */
+.navbar-nav .nav-link:hover {
+  color: rgb(255, 255, 255);          /* make text brighter */
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;                        /* underline expands fully */
+}
+
+.hmm:hover {
+  background-color: black !important;
+  color: white !important;
+  border-color: black !important;
+  transition: all 0.3s ease;
+}
+
+.custom-checkbox {
+  width: 24px;
+  height: 24px;
+  background-color: #0dcaf0; /* Bootstrap info color */
+  border-radius: 4px; /* Slightly rounded like checkboxes */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid #0aa2c0;
+}
+
+.custom-checkbox i {
+  color: white;
+  font-size: 14px;
+  transition: opacity 0.2s ease;
+}
+
+/* Hover effect */
+.custom :hover {
+  background-color: #0bb1d5;
+}
+
+/* Optional active (checked) style — toggles a darker color */
+.custom-checkbox.active {
+  background-color: #0a8eb3;
+  border-color: #087d9d;
+}
+
+/* --- Base styling for all tabs --- */
+.tab-pane {
+  display: none;
+  text-align: center;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+/* --- Image containers --- */
+.mee img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+/* Ensure all images in the row are equal height */
+.mee {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* --- Inner info containers (below each image) --- */
+.why {
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* Base link style */
+/* Base state — inactive = gray */
+.why .tab-link {
+  position: relative;
+  color: rgb(200, 205, 212); /* INACTIVE gray */
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Active = white */
+.why .tab-link.active {
+  color: white;
+}
+
+/* Hover — inactive becomes white */
+.why .tab-link:hover {
+  color: white;
+}
+
+/* Underline effect */
+.why .tab-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.4s ease;
+}
+
+/* Underline on hover or active */
+.why .tab-link:hover::after,
+.why .tab-link.active::after {
+  width: 100%;
+}
+
+
+/* --- Text alignment consistency --- */
+.why p,
+.why h5 {
+  margin: 0;
+}
+
+/* --- Adjust spacing for smaller screens --- */
+@media (max-width: 992px) {
+  .mee {
+    margin-bottom: 20px;
+  }
+  .why {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .why h5 {
+    font-size: 15px;
+  }
+  .why p {
+    font-size: 10px;
+  }
+  .mee img {
+    height: auto; /* allow flexible resizing */
+  }
+}
+
+@media (max-width: 576px) {
+  .mee {
+    padding: 10px 0;
+  }
+  .why {
+    padding: 8px;
+  }
+  .why h5 {
+    font-size: 14px;
+  }
+  .why p {
+    font-size: 9px;
+  }
+}
+
+.textcontent {
+  font-family: 'Montserrat', 'Poppins', sans-serif;
+  font-weight: 700;           /* bold */
+  font-size: clamp(2rem, 2.5vw + 1rem, 3rem);  /* adjust responsive size */
+  line-height: 1.2;            /* tight for headings */
+  text-transform: uppercase;   /* match uppercase style */
+}
+
+
+.thick-line {
+  width: 50%;
+  border-bottom: 4px solid rgb(40, 131, 219); /* thickness + color */
+  margin: 0 auto;
+  max-width: 64px; /* adjust length of line */
+}
+
+.thick {
+  width: 50%;
+  border-bottom: 3px solid rgb(254, 205, 96); /* thickness + color */
+  max-width: 48px; /* adjust length of line */
+}
+
+.sigh {
+  width: 50%; /* or any desired width */
+  max-width: 57px; /* limits the line length */
+  border-bottom: 3px solid white;
+  margin: 0 auto; /* centers the line horizontally */
+}
+
+.gonna {
+  width: 50%; /* or any desired width */
+  max-width: 53px; /* limits the line length */
+  border-bottom: 3px solid rgb(40, 131, 219);
+  margin: 0 auto; /* centers the line horizontally */
+}
+
+.know {
+  width: 50%; /* or any desired width */
+  max-width: 57px; /* limits the line length */
+  border-bottom: 3px solid white;
+}
+
+.code {
+  width: 50%; /* or any desired width */
+  max-width: 53px; /* limits the line length */
+  border-bottom: 3px solid rgb(40, 131, 219);
+}
+
+.seven {
+  width: 50%; /* or any desired width */
+  max-width: 57px; /* limits the line length */
+  border-bottom: 3px solid rgb(40, 131, 219);
+}
+
+.lose {
+  width: 50%; /* or any desired width */
+  max-width: 57px; /* limits the line length */
+  border-bottom: 3px solid rgb(40, 131, 219);
+  margin: 0 auto; /* centers the line horizontally */
+}
+
+.spacey{
+  background-color: black; /* default background */
+  color: white;            /* text color */
+  transition: background-color 0.3s ease;
+}
+
+:root {
+  --bs-font-sans-serif: "Roboto", sans-serif;
+}
+
+
+.spacey:hover {
+  background-color: #00aaff; /* light blue on hover */
+  color: white;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: rgb(191, 243, 83);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.scream {
+  width: 18px;
+  height: 10px;
+  background-color: rgb(191, 243, 83);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.git{
+  z-index: 0;
+  background: transparent;
+}
+
+.carousel-item {
+  height: 90vh;
+  min-height: 400px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  position: relative;
+}
+
+.carousel-caption {
+  bottom: 20%;
+  left: 10%;
+  text-align: left;
+}
+
+.carousel-caption h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-caption p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+.btn-custom {
+  background-color: rgb(40, 131, 219);
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 10px 25px;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+  background-color: rgb(30, 110, 195);
+}
+
+/* Optional: make indicators visible */
+.carousel-indicators [data-bs-target] {
+  background-color: white;
+  opacity: 0.7;
+}
+.carousel-indicators .active {
+  opacity: 1;
+}
+
+/* Make controls visible on light backgrounds */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(100%);
+}
+
+.image-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   /* or set a fixed height like 200px */
+}
+
+.pant:hover {
+  background-color: white !important;
+  color: black !important;
+  border-color: white !important;
+  transition: all 0.3s ease;
+}
+
+.hero-section {
+  background-image: url('https://res.cloudinary.com/det5cjrev/image/upload/v1762816583/development2_uhgjg9.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* 🔥 keeps background locked */
+  min-height: 700px;
+  display: flex;
+  padding: 50px 20px;
+}
+
+.hero-content {
+  position: relative; 
+  z-index: 2; 
+}
+
+.hero-img {
+  height: 120px;
+  margin-top: 20px;
+  border: 3px solid white;
+}
+
+.joe:hover {
+  background-color: rgb(85, 157, 226) !important;
+  color: white !important;
+  border-color: white !important;
+  transition: all 0.3s ease;
+}
+
+.image-card {
+  position: relative;
+  height: 450px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start; /* 👈 Move text to the TOP */
+  padding: 20px;
+  color: #fff;
+  box-shadow: 0px 10px 20px rgba(0,0,0,0.25);
+}
+
+
+/* Dark overlay so text pops out */
+.image-card .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(1px);
+  z-index: 1;
+}
+
+/* Text/content */
+.image-card .content {
+  position: relative;
+  z-index: 2;
+}
+
+.image-card .content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  height: 100%;           /* full height */
+}
+
+.image-card .content p {
+  margin-top: auto;       /* pushes paragraph to the bottom */
+}
+
+
+.image-card h4,
+.image-card p {
+  margin: 0;
+  padding: 0;
+}
+
+.blog {
+  padding-bottom: 100px; /* or any size you want */
+  margin-bottom: 0 !important;
+  
+}
+
+
+.ski{
+  background-color: rgb(18, 24, 39);
+}
+
+/* Responsive main heading */
+.responsive-heading {
+  font-size: 58px;
+}
+
+.responsive-text {
+  font-size: 18px;
+}
+
+/* Social links */
+.social-link {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: 'ingrid flower', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-transform: uppercase;
+  text-decoration: underline;
+  margin: 0;
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 992px) {
+  .responsive-heading {
+    font-size: 45px;
+  }
+  
+  .responsive-text {
+    font-size: 16px;
+  }
+  
+  .social-link {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .responsive-heading {
+    font-size: 35px;
+  }
+  
+  .responsive-text {
+    font-size: 14px;
+  }
+  
+  .social-link {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 576px) {
+  .responsive-heading {
+    font-size: 28px;
+  }
+  
+  .responsive-text {
+    font-size: 12px;
+  }
+  
+  .social-link {
+    font-size: 16px;
+  }
+}
+
+.pfft {
+  display: flex;               /* Enable Flexbox */
+  flex-direction: column;      /* Stack content vertically */
+  justify-content: center;     /* Center vertically */
+  align-items: center;         /* Center horizontally */
+  text-align: center;          /* Ensure text is centered */
+  height: 100%;                /* Optional: make it fill parent height if needed */
+  padding-top: 0;              /* Remove extra top padding if desired */
+  padding-bottom: 0;           /* Remove extra bottom padding if desired */
+}
+
+.glory {
+  width: 100px;              /* smaller width */
+  height: 100px;             /* smaller height to match width */
+  max-width: 50px;           /* optional max size */
+  max-height: 50px;
+  min-width: 40px;           /* optional min size */
+  min-height: 40px;
+  background-color: rgb(191, 243, 83); /* green color */
+  border-radius: 50%;        /* keeps it circular */
+  
+  /* Center icon inside */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  font-size: 16px;           /* adjust icon size if needed */
+}
+
+.align {
+  display: flex;
+  flex-direction: column;       /* stack items vertically */
+  align-items: center;          /* center horizontally */
+  justify-content: center;      /* center vertically if height allows */
+  text-align: center;           /* ensure text is centered */
+  gap: 10px;                    /* optional spacing between elements */
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;  /* vertical alignment of icon and text */
+  gap: 15px;            /* space between icon and text */
+}
+
+.contact-text {
+  display: flex;
+  flex-direction: column; /* stack heading and paragraph vertically */
+  justify-content: center;
+}
+
+.responsive {
+  text-align: left; /* default alignment on larger screens */
+}
+
+/* Center content on smaller screens */
+@media (max-width: 767px) {
+  .responsive {
+    text-align: center;
+  }
+}
+
+.link-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* evenly space links vertically */
+  height: 100%;
+}
+
+.footer-link {
+  color: rgb(167, 179, 184);
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s;
+  margin-bottom: 10px; /* space between links */
+}
+
+.footer-link:hover {
+  color: white;
+}
+
+/* Middle column height */
+.play {
+  height: 100%;
+}
+
+/* Extra: Add spacing between stacked inner columns on small screens */
+@media (max-width: 767px) {
+  .play .col-12 + .col-12 {
+    margin-top: 15px;
+  }
+}

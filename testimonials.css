@@ -1,0 +1,141 @@
+/* testimonials.css */
+/* Palette: primary rgb(0,132,222), accent rgb(191,243,83), white */
+
+:root{
+  --primary: rgb(0,132,222);
+  --accent: rgb(191,243,83);
+  --white: #fff;
+  --muted: #6b778a;
+  --dark: #0b2340;
+}
+
+/* Reset some defaults for this page */
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: var(--dark);
+  background: #fff;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Header / nav */
+.th-header .navbar { box-shadow: 0 6px 20px rgba(3,13,30,0.08); }
+.brand-text { font-weight: 700; color: #fff; font-size: 18px; }
+
+/* HERO */
+.th-hero {
+  background: linear-gradient(180deg, rgba(0,132,222,0.12), rgba(0,132,222,0.04));
+  color: #fff;
+  padding: 64px 0;
+  text-align:center;
+}
+.th-hero .display-5 { color: #fff; text-shadow: 0 6px 20px rgba(3,13,30,0.08); }
+.th-hero .lead { color: rgba(255,255,255,0.92); }
+
+/* Section titles */
+.section-title { font-size: 1.6rem; font-weight:700; color: var(--dark); }
+
+/* LOGO SLIDER */
+.logo-slider-wrap {
+  overflow: hidden;
+  position: relative;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #fff, #fbfeff);
+  padding: 18px 0;
+}
+.logo-slider {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  will-change: transform;
+  padding-left: 18px;
+  padding-right: 18px;
+  transition: transform 400ms cubic-bezier(.2,.9,.2,1);
+}
+.logo-slide {
+  flex: 0 0 auto;
+  width: 220px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity: 0.95;
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+.logo-slide img { max-width: 100%; height: auto; display:block; filter: grayscale(0.02); }
+
+/* Logo hover subtle pop */
+.logo-slide:hover { transform: translateY(-6px); opacity:1; }
+
+/* TESTIMONIALS SLIDER */
+.testimonial-slider-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.testimonial-slider {
+  display: flex;
+  gap: 20px;
+  transition: transform 420ms cubic-bezier(.2,.9,.2,1);
+  will-change: transform;
+}
+.testimonial-slide {
+  flex: 0 0 100%;
+  max-width: 100%;
+  display:flex;
+  justify-content:center;
+  padding: 8px;
+  box-sizing: border-box;
+}
+.testimonial-card {
+  border-radius: 12px;
+  width: 100%;
+  max-width: 900px;
+  padding: 18px;
+  background: linear-gradient(180deg,#fff,#fbfeff);
+  border: 1px solid rgba(12,30,50,0.04);
+}
+.avatar { width: 72px; height:72px; object-fit:cover; }
+
+/* Controls */
+.slider-controls .btn-transparent {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-size: 32px;
+  opacity: 0.35;
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+.slider-controls .btn-transparent:hover { opacity: 1; transform: translateY(-3px); }
+
+/* Simple hover card for cases */
+.hover-card { transition: transform 260ms ease, box-shadow 260ms ease; }
+.hover-card:hover { transform: translateY(-8px); box-shadow: 0 20px 44px rgba(3,13,30,0.09); }
+
+/* Stats */
+.stat-box { border-radius: 10px; background: linear-gradient(180deg,#fff,#fbfeff); border:1px solid rgba(12,30,50,0.04); }
+
+/* Animations: reveal-on-scroll */
+[data-animate] { opacity:0; transform: translateY(10px); transition: opacity 500ms ease, transform 500ms cubic-bezier(.2,.9,.2,1); }
+[data-visible="true"] { opacity:1; transform: translateY(0); }
+
+/* Responsive behavior for sliders */
+@media(min-width: 992px) {
+  /* Logo slider: show more spacing, keep centered */
+  .logo-slide { width: 220px; }
+  /* Testimonials: show as single slide centered */
+  .testimonial-slide { flex: 0 0 100%; max-width: 100%; }
+}
+@media(min-width: 1400px) {
+  .logo-slide { width: 260px; }
+}
+
+/* Small devices: tighten spacing */
+@media(max-width: 768px) {
+  .logo-slider { gap: 18px; }
+  .logo-slide { width: 160px; }
+  .th-hero { padding: 44px 0; }
+}
+
+/* Minor polish */
+a.btn-primary { background: var(--primary); border: none; }
+a.btn-primary:hover { background: var(--accent); color: var(--dark); }
+.navbar-toggler { filter: invert(1) brightness(2); }
