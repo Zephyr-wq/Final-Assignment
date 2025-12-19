@@ -13,7 +13,7 @@
 body {
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   color: var(--dark);
-  background: #fff;
+  background-color: white;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
 }
@@ -24,12 +24,12 @@ body {
 
 /* HERO */
 .th-hero {
-  background: linear-gradient(180deg, rgba(0,132,222,0.12), rgba(0,132,222,0.04));
+  background: linear-gradient(400deg, rgba(0,132,222,0.12), rgba(0,132,222,0.04));
   color: #fff;
   padding: 64px 0;
   text-align:center;
 }
-.th-hero .display-5 { color: #fff; text-shadow: 0 6px 20px rgba(3,13,30,0.08); }
+.th-hero .display-5 { color: gray; text-shadow: 0 6px 20px rgba(3,13,30,0.08); }
 .th-hero .lead { color: rgba(255,255,255,0.92); }
 
 /* Section titles */

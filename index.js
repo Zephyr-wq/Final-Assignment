@@ -1,19 +1,29 @@
-  const tabs = document.querySelectorAll('.tab-link');
-  const panes = document.querySelectorAll('.tab-pane');
+const tabs = document.querySelectorAll('.tab-link');
+const panes = document.querySelectorAll('.tab-pane');
 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', function (e) {
-      e.preventDefault();
+tabs.forEach(tab => {
+  tab.addEventListener('click', function (e) {
+    e.preventDefault();
 
-      // Remove active states
-      tabs.forEach(t => t.classList.remove('active'));
-      panes.forEach(p => p.classList.remove('active'));
+    // Remove active states
+    tabs.forEach(t => t.classList.remove('active'));
+    panes.forEach(p => p.classList.remove('active'));
 
-      // Activate clicked tab
-      this.classList.add('active');
-      document.getElementById(this.dataset.tab).classList.add('active');
-    });
-  })
+    this.classList.add('active');
+
+    // IF "All" tab is clicked → show all panes
+    if (this.dataset.tab === 'tab0') {
+      panes.forEach(p => p.classList.add('active'));
+    } 
+    // ELSE → show only the selected pane
+    else {
+      document
+        .getElementById(this.dataset.tab)
+        .classList.add('active');
+    }
+  });
+});
+
 
   // Bootstrap carousel setup
 document.addEventListener("DOMContentLoaded", () => {
