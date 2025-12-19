@@ -80,15 +80,19 @@ body, html {
   padding-bottom: 0 !important;
 }
 
-.gitt{
-  z-index: 1; 
-}
-
 @media (max-width: 768px) {
-  .gitt{
+  .gitt {
     text-align: center;
   }
+
+
+  .gitt {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
+
 
 
 .color{
@@ -325,9 +329,17 @@ body, html {
 
 .thick {
   width: 50%;
-  border-bottom: 3px solid rgb(254, 205, 96); /* thickness + color */
-  max-width: 48px; /* adjust length of line */
+  max-width: 48px;
+  border-bottom: 3px solid rgb(254, 205, 96);
 }
+
+@media (max-width: 768px) {
+  .thick {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 
 .sigh {
   width: 50%; /* or any desired width */
